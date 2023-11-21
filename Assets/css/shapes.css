@@ -1,0 +1,275 @@
+:root {
+    --cz: #bbb; /*Background*/
+    --lrj: #FF9D00; /*Title card*/
+    --wht: #FFF; /*Letter*/
+    --bck: #414141; /*Arrow*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: #202020;
+}
+
+/* Estilos Gerais */
+html{
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: var(--cz);
+    max-width: 1360px;
+    margin: 0 auto;
+
+}
+
+section{
+    width: 100%;
+    height: auto;
+    background-color: var(--cz);
+}
+
+section:nth-of-type(2n+1){
+    background-color: var(--wht);
+}
+
+#card-group-top, #card-group-bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px;
+    height: auto;
+    gap: 1rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+/* Config cards, usada no top, middle e bottom */
+.card-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 260px;
+    max-height: 260px;
+    margin: 10px;
+    position: relative;
+
+}
+
+.card-item img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* config top */
+#card-group-top .card-item{
+    flex-shrink: 1;
+    flex-grow: 1;
+
+}
+
+.card-title{
+    position: absolute;
+    bottom: 5%;
+    color: var(--lrj);
+    border: 2px solid var(--lrj);
+    padding: 5px 15px;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+ /* Section Middle */
+ #card-group-middle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    width: 70%;
+    margin: 0 auto;
+ }
+
+ .header-control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.title-header-slide{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bck);
+    border-bottom: 5px solid var(--bck);
+    margin-top: 10px;
+}
+
+.left-control, .right-control{
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 25px;
+    width: 25px;
+    color: var(--wht);
+    cursor: pointer;
+    border: none;
+    background-color: var(--bck);
+}
+
+.group-slide{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-top: 10px 0;
+    height: auto;
+}
+
+.group-slide::-webkit-scrollbar{
+    display: none;
+}
+
+.group-slide .card-item{
+    position: initial;
+    justify-content: space-between;
+    width: 25%;
+    min-width: 180px;
+    min-height: 320px;
+    gap: 1;
+}
+
+.group-slide .card-item img{
+    width: 100%;
+    height: 75%;
+    margin-bottom: 5px;
+}
+
+.current-item, .current-item2{
+    position: relative;
+    border: 2px solid var(--bck);
+    box-shadow: 0px 0px 15px 1px #202020;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+
+.title-card-slide, .priece-card-slide, .details-product{
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.priece-card-slide{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.details-product{
+    background-color: var(--bck);
+    padding: 5px;
+}
+
+.details-product a{
+    color: white;
+    padding: 5px 10px;
+}
+
+
+/* Section bottom */
+#card-group-bottom .card-item{
+    width: 100%;
+    height: 200px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px){
+    #card-group-top, #card-group-bottom{
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    #card-group-top, #card-group-bottom{
+        width: 100%;
+        margin: 10px auto;
+    }
+    #card-group-top .card-item, #card-group-bottom .card-item{
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    .header-control{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .title-header-slide{
+        text-align: center;
+    }
+
+    .left-control, .right-control{
+        font-size: 1.5rem;
+        line-height: 25px;
+        width: 50px;
+        margin: 10px auto;
+        border-radius: 40px;
+    }
+
+    .group-slide .card-item{
+        margin: 0px 20px;
+        min-height: 200px;
+    }
+
+    .title-card-slide, .priece-card-slide, .details-product{
+        font-size: 1rem;
+    }
+
+    .priece-card-slide, .details-product{
+        padding: 2px;
+    }
+    
+}
+
+@media only screen and (max-width: 400px){
+    .card-title{
+        padding: 2px 5px;
+        font-size: 0.8rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    .group-slide{
+        min-width: 200px;
+    }
+
+    
+}
